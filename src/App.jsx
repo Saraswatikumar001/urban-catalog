@@ -10,6 +10,7 @@ import PurposeGoals from './components/home/PurposeGoals'
 import StatsCounter from './components/home/StatsCounter'
 import TestimonialSlider from './components/home/TestimonialSlider'
 import LatestNews from './components/home/LatestNews'
+import Footer from './components/Footer'
 function App() {
 
   return (
@@ -22,6 +23,7 @@ function App() {
       <StatsCounter />
       <TestimonialSlider />
       <LatestNews />
+      <Footer />
       <Routes>
 
       </Routes>
