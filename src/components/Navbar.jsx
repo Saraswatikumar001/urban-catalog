@@ -15,13 +15,14 @@ const Navbar = () => {
                 <div className="max-w-7xl mx-auto flex justify-between items-center">
                     {/* Logo */}
                     <div className="flex items-center">
-                        <img 
-                            src={logo}
-                            alt="Urban Mix Concrete logo"
-                            className="h-16 w-auto object-contain" 
-                        />
+                        <Link to="/">
+                            <img
+                                src={logo}
+                                alt="Urban Mix Concrete logo"
+                                className="h-16 w-auto object-contain"
+                            />
+                        </Link>
                     </div>
-
                     {/* Desktop Menu */}
                     <ul className="hidden md:flex gap-8 font-semibold text-base items-center">
                         <li className="hover:text-[#B13F1A] transition-colors text-xl duration-300 cursor-pointer">
@@ -48,9 +49,9 @@ const Navbar = () => {
                             className="bg-[#B13F1A] hover:from-orange-600 hover:to-orange-700 text-white font-semibold px-6 py-2.5 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:scale-105"
                         >
                             Enquiry
-                        </button>                        
+                        </button>
                         {/* Mobile Menu Button */}
-                        <button 
+                        <button
                             className="md:hidden text-2xl text-gray-800"
                             onClick={() => setMobileMenu(!mobileMenu)}
                         >
@@ -94,12 +95,12 @@ const Navbar = () => {
                         >
                             ✖
                         </button>
-                        
+
                         {/* Header */}
                         <h2 className="text-2xl font-bold mb-6 text-gray-800 text-center">
                             Enquiry Form
                         </h2>
-                        
+
                         {/* Form */}
                         <form className="space-y-4">
                             <input
@@ -127,7 +128,7 @@ const Navbar = () => {
                                 placeholder="Message"
                                 rows="4"
                             ></textarea>
-                            <button 
+                            <button
                                 type="submit"
                                 className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-semibold w-full py-3 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:scale-105"
                             >

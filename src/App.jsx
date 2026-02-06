@@ -1,35 +1,25 @@
-import React from 'react'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import Navbar from './components/Navbar'
-import './App.css'
-import './index.css'
-import HeroSection from './components/home/HeroSection'
-import ExperienceSection from './components/home/ExperienceSection'
-import Services from './components/home/Services'
-import PurposeGoals from './components/home/PurposeGoals'
-import StatsCounter from './components/home/StatsCounter'
-import TestimonialSlider from './components/home/TestimonialSlider'
-import LatestNews from './components/home/LatestNews'
-import Footer from './components/Footer'
-function App() {
+import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import Home from "./components/home/Home";
+import About from "./components/about/About";
+import Products from "./components/Products";
+import "./App.css";
+import "./index.css";
 
+function App() {
   return (
     <BrowserRouter>
       <Navbar />
-      <HeroSection />
-      <ExperienceSection />
-      <Services />
-      <PurposeGoals />
-      <StatsCounter />
-      <TestimonialSlider />
-      <LatestNews />
-      <Footer />
       <Routes>
-
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/Products" element={<Products />} />
       </Routes>
+      <Footer />
     </BrowserRouter>
-
-  )
+  );
 }
 
-export default App
+export default App;
