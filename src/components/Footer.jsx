@@ -76,7 +76,6 @@ const Footer = () => {
                 <div>
                     <h4 className="font-semibold text-xl mb-4">Contact</h4>
                     <ul className="space-y-4 text-gray-300 text-lg">
-
                         <li className="flex items-center gap-3">
                             <span className="w-10 h-10 flex items-center justify-center rounded-full bg-[#B33F18]">
                                 <FaMapMarkerAlt className="text-white" />

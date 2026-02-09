@@ -4,17 +4,17 @@ const services = [
     {
         title: "Paver Block Manufacturing",
         desc: "High strength interlocking paver blocks produced using modern machinery.",
-        color: "bg-pink-500",
+        color: "bg-[#B74722]",
     },
     {
         title: "Tiles Production",
         desc: "Durable and attractive concrete tiles for indoor and outdoor spaces.",
-        color: "bg-orange-500",
+        color: "bg-[#DD615F]",
     },
     {
         title: "Custom Designs",
         desc: "Multiple patterns, colors and finishes as per customer requirement.",
-        color: "bg-purple-500",
+        color: "bg-[#427A43]",
     },
     {
         title: "Bulk Supply",
@@ -35,13 +35,13 @@ const services = [
 
 const Services = () => {
     return (
-        <section className="py-20 bg-gray-100">
+        <section className="mt-24 py-20 bg-gray-100">
             <div className="max-w-7xl mx-auto px-6">
                 <div className="text-center mb-12">
                     <p className="text-orange-500 font-semibold uppercase">
                         Our Services
                     </p>
-                    <h2 className="text-4xl font-bold mt-2">
+                    <h2 className="md:text-4xl text-3xl font-bold mt-2">
                         A Wide Range Of Our Services
                     </h2>
                 </div>

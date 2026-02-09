@@ -86,7 +86,7 @@ const Navbar = () => {
 
             {/* MODAL POPUP */}
             {open && (
-                <div className="fixed inset-0 bg-black/60 backdrop-blur-sm flex justify-center items-center z-50 p-4">
+                <div className="fixed inset-0 bg-black/60  flex justify-center items-center z-50 p-4">
                     <div className="bg-white w-full max-w-md p-8 rounded-xl shadow-2xl relative">
                         {/* Close Button */}
                         <button
@@ -130,7 +130,7 @@ const Navbar = () => {
                             ></textarea>
                             <button
                                 type="submit"
-                                className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-semibold w-full py-3 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+                                className="bg-[#B13F1A] hover:from-orange-600 hover:to-orange-700 text-white font-semibold w-full py-3 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:scale-105"
                             >
                                 Submit
                             </button>

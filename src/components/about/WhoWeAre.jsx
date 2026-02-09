@@ -2,7 +2,7 @@ import React from "react";
 
 const WhoWeAreSection = () => {
   return (
-    <section className="py-20 bg-white">
+    <section className="md:py-20 bg-white">
       <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
         {/* LEFT IMAGES */}
         <div className="relative">
@@ -10,23 +10,23 @@ const WhoWeAreSection = () => {
           <img
             src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c"
             alt="Engineer"
-            className="rounded-lg w-3/4"
+            className="rounded-lg md:w-3/4 w-full"
           />
           {/* Small Image */}
           <img
             src="https://images.unsplash.com/photo-1503387762-592deb58ef4e"
             alt="Construction"
-            className="rounded-lg w-1/2 absolute bottom-[-40px] right-0 shadow-lg"
+            className="rounded-lg w-1/2 absolute md:bottom-[-40px] bottom-[-101px] md:right-0 shadow-lg"
           />
           {/* Experience Box */}
-          <div className="absolute top-6 right-6 bg-[#B13F1A] text-white p-6 rounded-lg text-center shadow-lg">
+          <div className="md:mt-0 mt-1 absolute md:top-6 md:right-6 right-0 bg-[#B13F1A] text-white p-6 rounded-lg text-center shadow-lg">
             <h2 className="text-3xl font-bold">25+</h2>
             <p className="text-sm">Years Experience</p>
           </div>
         </div>
 
         {/* RIGHT CONTENT */}
-        <div>
+        <div class="md:py-0 py-20">
           <p className="text-[#D96E4F] font-semibold mb-2 uppercase">
             Who We Are
           </p>
