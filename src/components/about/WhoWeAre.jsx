@@ -1,4 +1,6 @@
 import React from "react";
+import whoImg1 from "../../assets/who-we-are1.png";
+import whoImg2 from "../../assets/who-we-are2.png";
 
 const WhoWeAreSection = () => {
   return (
@@ -8,13 +10,13 @@ const WhoWeAreSection = () => {
         <div className="relative">
           {/* Big Image */}
           <img
-            src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c"
+            src={whoImg1}
             alt="Engineer"
             className="rounded-lg md:w-3/4 w-full"
           />
           {/* Small Image */}
           <img
-            src="https://images.unsplash.com/photo-1503387762-592deb58ef4e"
+            src={whoImg2}
             alt="Construction"
             className="rounded-lg w-1/2 absolute md:bottom-[-40px] bottom-[-101px] md:right-0 shadow-lg"
           />

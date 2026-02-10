@@ -3,3 +3,128 @@
 body {
   font-family: "Figtree", sans-serif;
 }
+
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeUp {
+  animation: fadeUp 0.9s ease-out;
+}
+
+/* Slide up animation (text block) */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slideUp {
+  animation: slideUp 0.9s ease-out forwards;
+}
+
+/* Fade in (image collage) */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 1s ease-out forwards;
+}
+
+/* Slow pulse (badge) */
+@keyframes pulseSlow {
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.06);
+  }
+}
+
+.animate-pulseSlow {
+  animation: pulseSlow 3s ease-in-out infinite;
+}
+
+
+/* Zoom animations */
+@keyframes zoomCenter {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(1.6);
+  }
+}
+
+@keyframes zoomRotate {
+  from {
+    transform: scale(1) rotate(0deg);
+  }
+
+  to {
+    transform: scale(1.6) rotate(2deg);
+  }
+}
+
+@keyframes zoomLift {
+  from {
+    transform: scale(1) translateY(0);
+  }
+
+  to {
+    transform: scale(1.6) translateY(-20px);
+  }
+}
+
+.zoom-center {
+  animation: zoomCenter 0.5s ease forwards;
+  z-index: 50;
+}
+
+.zoom-rotate {
+  animation: zoomRotate 0.5s ease forwards;
+  z-index: 50;
+}
+
+.zoom-lift {
+  animation: zoomLift 0.5s ease forwards;
+  z-index: 50;
+}
+
+/* Hide scrollbar but allow scroll */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE & Edge */
+  scrollbar-width: none;     /* Firefox */
+}

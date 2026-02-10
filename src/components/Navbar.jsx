@@ -46,7 +46,7 @@ const Navbar = () => {
                     <div className="flex items-center gap-4">
                         <button
                             onClick={() => setOpen(true)}
-                            className="bg-[#B13F1A] hover:from-orange-600 hover:to-orange-700 text-white font-semibold px-6 py-2.5 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+                            className="bg-[#B13F1A] hover:bg-[#B33F18] text-white font-semibold px-6 py-2.5 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:scale-105"
                         >
                             Enquiry
                         </button>

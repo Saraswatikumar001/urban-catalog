@@ -1,7 +1,6 @@
 import React from "react";
 import HeroSection from "./HeroSection";
 import ExperienceSection from "./ExperienceSection";
-import Services from "./Services";
 import PurposeGoals from "./PurposeGoals";
 import StatsCounter from "./StatsCounter";
 import TestimonialSlider from "./TestimonialSlider";
@@ -11,8 +10,7 @@ const Home = () => {
   return (
     <>
       <HeroSection />
-      <ExperienceSection />
-      <Services />
+      <ExperienceSection />      
       <PurposeGoals />
       <StatsCounter />
       <TestimonialSlider />

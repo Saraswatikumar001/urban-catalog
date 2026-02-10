@@ -1,37 +1,80 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import blogs from "../../data/blogs";
 
 const BlogDetails = () => {
   const { slug } = useParams();
-  const blog = blogs.find((b) => b.slug === slug);
+
+  const blog = blogs.find((item) => item.slug === slug);
 
   if (!blog) {
     return (
-      <div className="text-center py-20 text-xl">
-        Blog not found
+      <div className="pt-24 text-center">
+        <h2 className="text-2xl font-bold">Blog not found</h2>
+        <Link
+          to="/blogs"
+          className="text-[#BA461C] font-semibold mt-4 inline-block"
+        >
+          ← Back to Blogs
+        </Link>
       </div>
     );
   }
 
   return (
-    <div className="max-w-4xl mx-auto px-6 py-12">
-      <p className="text-sm text-gray-500 mb-3">{blog.date}</p>
+    <section className="bg-gray-100 pt-24 pb-20">
+      <div className="max-w-6xl mx-auto px-6">
 
-      <h1 className="text-4xl font-bold text-[#BA461C] mb-6">
-        {blog.title}
-      </h1>
+        {/* HERO IMAGE */}
+        <div className="relative h-[380px] rounded-2xl overflow-hidden shadow-lg mb-10">
+          <img
+            src={blog.image}
+            alt={blog.title}
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-black/50"></div>
 
-      <img
-        src={blog.image}
-        alt={blog.title}
-        className="w-full rounded-xl mb-8"
-      />
+          {/* CATEGORY */}
+          {blog.category && (
+            <span className="absolute top-6 left-6 bg-[#BA461C] text-white px-4 py-1 rounded-full text-sm uppercase tracking-wide">
+              {blog.category}
+            </span>
+          )}
+        </div>
 
-      <div className="text-gray-700 text-lg leading-8 whitespace-pre-line">
-        {blog.content}
+        {/* CONTENT */}
+        <div className="bg-white rounded-2xl shadow-md p-8 md:p-12">
+
+          {/* DATE */}
+          <p className="text-gray-500 text-sm mb-2">
+            {blog.date}
+          </p>
+
+          {/* TITLE */}
+          <h1 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6 leading-snug">
+            {blog.title}
+          </h1>
+
+          {/* BLOG CONTENT */}
+          <div className="prose prose-lg max-w-none text-gray-700">
+            {blog.content.split("\n").map((line, index) => (
+              <p key={index}>{line}</p>
+            ))}
+          </div>
+
+          {/* BACK LINK */}
+          <div className="mt-10">
+            <Link
+              to="/blogs"
+              className="inline-flex items-center gap-2 text-[#BA461C] font-semibold hover:gap-3 transition-all"
+            >
+              ← Back to Blogs
+            </Link>
+          </div>
+
+        </div>
       </div>
-    </div>
+    </section>
   );
 };
 

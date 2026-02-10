@@ -11,7 +11,8 @@ import AllNews from "./components/news/AllNews";
 import Contact from "./components/contact/Contact";
 import WhatsAppButton from "./components/WhatsAppButton";
 import Blogs from "./components/blog/Blogs";
-import ServiceDetails from "./components/services/ServiceDetails";
+import ServiceDetails from "../public/services/ServiceDetails";
+import PaverBlocks from "./components/footer-ourservices/PaverBlocks";
 import "./App.css";
 import "./index.css";
 
@@ -28,6 +29,7 @@ function App() {
         <Route path="/news" element={<AllNews />} />
         <Route path="/blog" element={<Blogs />} />
         <Route path="/services/:slug" element={<ServiceDetails />} />
+        <Route path="/ourservices" element={<PaverBlocks />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
       <Footer />

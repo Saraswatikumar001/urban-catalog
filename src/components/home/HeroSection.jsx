@@ -1,73 +1,72 @@
-import React from "react";
-import heroImg from "../../assets/hero.png";
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
-const HeroSection = () => {
+
+const slides = [
+  {
+    image: "../../src/assets/tiles-1.png",
+    title: "TILES & PAVER BLOCKS",
+    subtitle:
+      "We provide checker katali block, brick guti tiles, polish tiles, and tuff tiles suitable for daily construction use.",
+  },
+  {
+    image: "../../src/assets/tiles-2.png",
+    title: "PAVER BLOCK DESIGNS",
+    subtitle:
+      "Available designs include damru paver block, arch paver block, floral block, and diamond paver blocks.",
+  },
+  {
+    image: "../../src/assets/tiles-3.png",
+    title: "OUTDOOR & FLOORING PRODUCTS",
+    subtitle:
+      "Our products are suitable for flooring, pathways, parking areas, and outdoor construction applications.",
+  },
+];
+
+const AboutHero = () => {
+  const [current, setCurrent] = useState(0);
+
+  // Auto slide
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % slides.length);
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
-    <section
-      className="relative pt-24 min-h-[80vh] md:min-h-[90vh] flex items-center text-white pb-40 md:pb-0"
-      style={{
-        backgroundImage:
-          "url('https://images.unsplash.com/photo-1503387762-592deb58ef4e')",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-      }}
-    >
-      {/* Dark Overlay */}
-      <div className="absolute inset-0 bg-black/70"></div>
-      {/* Content */}
-      <div className="relative max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">        
-        {/* LEFT CONTENT */}
-        <div className="flex flex-col justify-center text-center md:text-left">
-          <div className="border-l-4 border-orange-500 pl-4 mb-4 md:pl-4 md:border-l-4 border-l-0 md:border-orange-500">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight">
-              Urban Mix Concrete <br />
-              Building Strong Foundations
-            </h1>
-          </div>
-
-          <p className="text-gray-300 max-w-lg mt-3 mx-auto md:mx-0">
-            We manufacture premium quality paver blocks, tiles and construction
-            materials with modern technology to build durable and beautiful spaces.
-          </p>
-
-          <button className="mt-6 mx-auto md:mx-0 w-fit bg-orange-500 hover:bg-orange-600 px-6 py-3 rounded font-medium">
-            Explore Products
-          </button>
-        </div>
-
-        {/* RIGHT IMAGE AREA (HIDE ON SMALL SCREENS) */}
-        <div className="relative hidden md:flex justify-center items-center">
-          <div className="absolute w-80 h-80 bg-orange-500 rounded-full blur-3xl opacity-40"></div>
-          <div className="absolute w-72 h-72 bg-orange-500 rounded-full"></div>
+    <section className="relative h-[90vh] overflow-hidden">
+      {/* Background Images */}
+      {slides.map((slide, index) => (
+        <div
+          key={index}
+          className={`absolute inset-0 transition-opacity duration-1000 ${index === current ? "opacity-100" : "opacity-0"
+            }`}
+        >
           <img
-            src={heroImg}
-            alt="Worker"
-            className="relative w-72 md:w-80 object-contain drop-shadow-xl"
+            src={slide.image}
+            alt={slide.title}
+            className="w-full h-full object-cover"
           />
+          {/* Dark overlay */}
+          <div className="absolute inset-0 bg-black/40"></div>
         </div>
-      </div>
+      ))}
 
-      {/* FEATURE CARDS */}
-      <div className="absolute -bottom-20 left-0 right-0 hidden md:block">
-        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-6">
-          <div className="bg-white text-black p-8 rounded shadow">
-            <h3 className="font-semibold text-2xl">Quality Materials</h3>
-            <p className="text-gray-600 text-lg mt-2">
-              Strong & long-lasting construction products.
-            </p>
-          </div>
+      {/* Content */}
+      <div className="relative z-10 h-full flex items-center">
+        <div className="max-w-7xl mx-auto px-6">
+          <div
+            key={current}
+            className="max-w-xl animate-fadeUp"
+          >
+            <h1 className="text-white text-4xl md:text-5xl font-bold mb-4 tracking-wide">
+              {slides[current].title}
+            </h1>
 
-          <div className="bg-white text-black p-8 rounded shadow">
-            <h3 className="font-semibold text-2xl">Modern Manufacturing</h3>
-            <p className="text-gray-600 text-lg mt-2">
-              Advanced machines & skilled workforce.
-            </p>
-          </div>
-
-          <div className="bg-white text-black p-8 rounded shadow">
-            <h3 className="font-semibold text-2xl">Affordable Pricing</h3>
-            <p className="text-gray-600 text-lg mt-2">
-              Best quality at competitive rates.
+            <p className="text-gray-200 text-lg mb-6">
+              {slides[current].subtitle}
             </p>
           </div>
         </div>
@@ -76,4 +75,4 @@ const HeroSection = () => {
   );
 };
 
-export default HeroSection;
+export default AboutHero;

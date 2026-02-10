@@ -1,70 +1,101 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import img1 from "../../assets/news1.jpg";
-import img2 from "../../assets/news2.jpg";
-import img3 from "../../assets/news3.jpg";
+import { FaUser, FaCommentAlt, FaArrowRight } from "react-icons/fa";
 import newsData from "../../data/newsData";
-
-
 
 const LatestNews = () => {
   return (
-    <section className="md:py-20 bg-white">
+    <section className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-6">
-        {/* Header */}
-        <div className="flex items-center justify-between mb-10">
+        {/* HEADER */}
+        <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-14">
           <div>
-            <p className="text-orange-500 font-semibold uppercase">
+            <p className="text-[#BA461C] font-semibold uppercase tracking-wide">
               Our Blog
             </p>
-            <h2 className="text-4xl font-bold text-gray-900 mt-2">
-              Our Latest News
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-2">
+              Latest News & Insights
             </h2>
+            <p className="text-gray-600 mt-3 max-w-xl">
+              Stay updated with the latest trends, tips, and innovations in
+              tiles, paver blocks, and construction solutions.
+            </p>
           </div>
 
-          <Link to="/news" className="hidden md:flex items-center gap-2 px-6 py-3 rounded-full border text-gray-700 hover:bg-gray-100 transition">
-            View All →
+          {/* VIEW ALL */}
+          <Link
+            to="/news"
+            className="mt-6 md:mt-0 inline-flex items-center gap-2
+                       px-6 py-3 rounded-full border border-gray-300
+                       text-gray-700 font-medium
+                       hover:bg-[#BA461C] hover:text-white hover:border-[#BA461C]
+                       transition"
+          >
+            View All News
+            <FaArrowRight />
           </Link>
         </div>
 
-        {/* Cards */}
-        <div className="grid md:grid-cols-3 gap-8">
-          {newsData.map((item, index) => (
+        {/* NEWS CARDS */}
+        <div className="grid md:grid-cols-3 gap-10">
+          {newsData.slice(0, 3).map((item) => (
             <div
-              key={index}
-              className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition"
+              key={item.slug}
+              className="group bg-white rounded-2xl overflow-hidden
+                         shadow-md hover:shadow-2xl transition-all duration-300"
             >
-              {/* Image */}
-              <img
-                src={item.image}
-                alt={item.title}
-                className="w-full h-[220px] object-cover"
-              />
+              {/* IMAGE */}
+              <div className="relative h-56 overflow-hidden">
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  className="w-full h-full object-cover
+                             transition-transform duration-500
+                             group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition"></div>
 
-              {/* Content */}
+                {/* CATEGORY / LABEL (optional) */}
+                {item.category && (
+                  <span className="absolute top-4 left-4 bg-[#BA461C]
+                                   text-white text-xs px-3 py-1 rounded-full uppercase">
+                    {item.category}
+                  </span>
+                )}
+              </div>
+
+              {/* CONTENT */}
               <div className="p-6">
-                {/* Meta */}
-                <div className="flex items-center gap-4 text-sm text-gray-500 mb-3">
-                  <span>👤 {item.author}</span>
-                  <span>💬 {item.comments}</span>
+                {/* META */}
+                <div className="flex items-center gap-6 text-sm text-gray-500 mb-3">
+                  <span className="flex items-center gap-2">
+                    <FaUser /> {item.author}
+                  </span>
+                  <span className="flex items-center gap-2">
+                    <FaCommentAlt /> {item.comments}
+                  </span>
                 </div>
 
-                {/* Title */}
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                {/* TITLE */}
+                <h3 className="text-xl font-semibold text-gray-900 mb-3
+                               group-hover:text-[#BA461C] transition">
                   {item.title}
                 </h3>
 
-                {/* Description */}
-                <p className="text-gray-600 mb-4">
+                {/* DESC */}
+                <p className="text-gray-600 mb-5 leading-relaxed">
                   {item.desc}
                 </p>
 
-                {/* ✅ READ MORE (WORKING) */}
+                {/* READ MORE */}
                 <Link
                   to={`/news/${item.slug}`}
-                  className="text-blue-600 font-semibold hover:underline flex items-center gap-1"
+                  className="inline-flex items-center gap-2
+                             text-[#BA461C] font-semibold
+                             group-hover:gap-3 transition-all"
                 >
-                  READ MORE →
+                  Read More
+                  <FaArrowRight />
                 </Link>
               </div>
             </div>

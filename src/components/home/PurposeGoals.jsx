@@ -1,86 +1,83 @@
-import React from "react";
-
-import img1 from "../../assets/purpose_image_1.png";
-import img2 from "../../assets/purpose_image_2.png";
-import img3 from "../../assets/purpose_image_3.png";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import products from "../../data/products";
+import ProductCard from "../ProductCard";
 
 const PurposeGoals = () => {
+  const [search, setSearch] = useState("");
+  const [category, setCategory] = useState("All");
+  const navigate = useNavigate();
+
+  const filteredProducts = products.filter((item) => {
+    const matchName = item.name
+      .toLowerCase()
+      .includes(search.toLowerCase());
+    const matchCategory =
+      category === "All" || item.category === category;
+    return matchName && matchCategory;
+  });
+
+  const displayedProducts = filteredProducts.slice(0, 6);
+
   return (
-    <section className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-6">
-        {/* Header */}
-        <div className="flex justify-between items-center mb-10">
-          <div>
-            <p className="text-orange-500 font-semibold uppercase">
-              Latest Project
-            </p>
-            <h2 className="text-4xl font-bold mt-2">
-              The Purpose And Goals Of The Project
-            </h2>
-          </div>
-          <button className="hidden md:block border border-gray-300 px-5 py-2 rounded hover:bg-gray-100">
-            View All →
+    <section className="px-6 py-16 bg-white">
+      <div className="max-w-7xl mx-auto">
+        {/* TITLE */}
+        <h1 className="text-[#BA461C] text-5xl font-bold text-center mb-6 uppercase">
+          Our Products
+        </h1>
+        <p className="text-gray-600 text-center max-w-2xl mx-auto mb-10">
+          We provide tiles, paver blocks, and concrete products suitable for
+          residential, commercial, and outdoor construction use.
+        </p>
+        {/* SEARCH */}
+        <div className="max-w-md mx-auto mb-8">
+          <input
+            type="text"
+            placeholder="Search product..."
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            className="w-full border border-gray-300 rounded-lg px-4 py-3"
+          />
+        </div>
+
+        {/* CATEGORY FILTER */}
+        <div className="flex justify-center gap-4 mb-12 flex-wrap">
+          {["All", "Tiles", "Blocks", "Pavers"].map((cat) => (
+            <button
+              key={cat}
+              onClick={() => setCategory(cat)}
+              className={`px-5 py-2 rounded-full border transition
+                ${
+                  category === cat
+                    ? "bg-[#BA461C] text-white border-[#BA461C]"
+                    : "bg-gray-100 hover:bg-gray-200"
+                }`}
+            >
+              {cat}
+            </button>
+          ))}
+        </div>
+
+        {/* PRODUCTS GRID (ONLY 6) */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+          {displayedProducts.map((item) => (
+            <ProductCard key={item.id} product={item} />
+          ))}
+        </div>
+
+        {/* EXPLORE MORE BUTTON */}
+        <div className="flex justify-center mt-14">
+          <button
+            onClick={() => navigate("/products")}
+            className="px-8 py-4 rounded-full
+                       bg-[#BA461C] text-white font-semibold
+                       hover:bg-[#a53c18] transition"
+          >
+            Explore More Products →
           </button>
         </div>
-        {/* Cards */}
-        <div className="grid md:grid-cols-3 gap-8">
-          {/* Card 1 */}
-          <div className="relative group rounded-xl overflow-hidden w-full">
-            {/* Image */}
-            <img
-              src={img1}
-              alt="Manufacturing"
-              className="w-full h-[260px] object-cover block"
-            />
-            {/* Black Overlay */}
-            <div className="absolute inset-0 bg-black/40"></div>
-            {/* Text */}
-            <div className="absolute bottom-4 left-4 z-10 text-white">
-              <h3 className="font-semibold text-lg">
-                Concrete Product Manufacturing
-              </h3>
-              <p className="text-sm">
-                Urban Mix Concrete Plant
-              </p>
-            </div>
-          </div>
 
-          {/* Card 2 */}
-          <div className="relative group rounded-xl overflow-hidden w-full">
-            <img
-              src={img2}
-              alt="Paver Blocks"
-              className="w-full h-[260px] object-cover block"
-            />
-            <div className="absolute inset-0 bg-black/40"></div>
-            <div className="absolute bottom-4 left-4 z-10 text-white">
-              <h3 className="font-semibold text-lg">
-                Paver Block Production
-              </h3>
-              <p className="text-sm text-gray-200">
-                High Strength Blocks
-              </p>
-            </div>
-          </div>
-
-          {/* Card 3 */}
-          <div className="relative group rounded-xl overflow-hidden w-full">
-            <img
-              src={img3}
-              alt="Tiles"
-              className="w-full h-[260px] object-cover block"
-            />
-            <div className="absolute inset-0 bg-black/40"></div>
-            <div className="absolute bottom-4 left-4 z-10 text-white">
-              <h3 className="font-semibold text-lg">
-                Designer Tiles Manufacturing
-              </h3>
-              <p className="text-sm text-gray-200">
-                Durable & Stylish Tiles
-              </p>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );
