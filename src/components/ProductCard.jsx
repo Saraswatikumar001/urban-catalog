@@ -2,7 +2,6 @@ import React from "react";
 const ProductCard = ({ product }) => {
   return (
     <div className="bg-white rounded-xl shadow-md hover:shadow-xl transition duration-300 overflow-hidden">
-
       {/* IMAGE */}
       <div className="h-56 overflow-hidden">
         <img

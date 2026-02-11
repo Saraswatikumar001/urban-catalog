@@ -4,8 +4,6 @@ import slide1 from "../../assets/tiles-1.png";
 import slide2 from "../../assets/tiles-2.png";
 import slide3 from "../../assets/tiles-3.png";
 
-
-
 const slides = [
   {
     image: slide1,
@@ -41,7 +39,7 @@ const AboutHero = () => {
   }, []);
 
   return (
-    <section className="relative min-h-[70vh] md:h-[90vh] overflow-hidden">
+    <section className="relative min-h-[70vh] md:h-[90vh] overflow-hidden pt-46">
       {/* Background Images */}
       {slides.map((slide, index) => (
         <div
@@ -69,7 +67,6 @@ const AboutHero = () => {
             <h1 className="text-white text-4xl md:text-5xl font-bold mb-4 tracking-wide">
               {slides[current].title}
             </h1>
-
             <p className="text-gray-200 text-lg mb-6">
               {slides[current].subtitle}
             </p>

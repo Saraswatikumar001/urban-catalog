@@ -23,7 +23,7 @@ const PurposeGoals = () => {
     <section className="px-6 py-16 bg-white">
       <div className="max-w-7xl mx-auto">
         {/* TITLE */}
-        <h1 className="text-[#BA461C] text-5xl font-bold text-center mb-6 uppercase">
+        <h1 className="text-[#BA461C] md:text-5xl text-3xl font-bold text-center mb-6 uppercase">
           Our Products
         </h1>
         <p className="text-gray-600 text-center max-w-2xl mx-auto mb-10">
@@ -42,7 +42,7 @@ const PurposeGoals = () => {
         </div>
 
         {/* CATEGORY FILTER */}
-        <div className="flex justify-center gap-4 mb-12 flex-wrap">
+        <div className="flex justify-center gap-4 mb-12 md:flex-wrap">
           {["All", "Tiles", "Blocks", "Pavers"].map((cat) => (
             <button
               key={cat}
@@ -77,7 +77,6 @@ const PurposeGoals = () => {
             Explore More Products →
           </button>
         </div>
-
       </div>
     </section>
   );
