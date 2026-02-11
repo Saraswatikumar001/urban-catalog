@@ -102,12 +102,7 @@ const AboutHero = () => {
                 <span className="text-orange-500 font-bold">✔</span>
                 <p className="text-gray-700">Experienced operational team</p>
               </div>
-            </div>
-
-            {/* BUTTON */}
-            <button className="bg-[#B13F1A] hover:bg-orange-600 text-white px-6 py-3 rounded-md font-semibold transition">
-              Learn More About Us
-            </button>
+            </div>            
           </div>
         </div>
       </section>

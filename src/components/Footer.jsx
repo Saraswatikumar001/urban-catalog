@@ -12,8 +12,7 @@ import {
 
 const Footer = () => {
   return (
-    <footer className="bg-black text-white pt-16">
-      
+    <footer className="bg-black text-white pt-16">      
       {/* Newsletter */}
       <div className="max-w-7xl mx-auto px-6 pb-14 border-b border-white/10">
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
@@ -59,25 +58,20 @@ const Footer = () => {
 
         {/* Our Services */}
         <div>
-          <h4 className="font-semibold text-xl mb-4">Our Services</h4>
+          <h4 className="font-semibold text-xl mb-4">Our Products</h4>
           <ul className="space-y-2 text-gray-300 text-lg">
             <li>
-              <Link to="/services/paver-blocks" className="hover:text-[#B33F18] transition">
+              <Link to="/paver" className="hover:text-[#B33F18] transition">
                 Paver Blocks
               </Link>
             </li>
             <li>
-              <Link to="/services/designer-tiles" className="hover:text-[#B33F18] transition">
+              <Link to="/tiles" className="hover:text-[#B33F18] transition">
                 Designer Tiles
               </Link>
-            </li>
+            </li>           
             <li>
-              <Link to="/services/kerb-stones" className="hover:text-[#B33F18] transition">
-                Kerb Stones
-              </Link>
-            </li>
-            <li>
-              <Link to="/services/concrete-bricks" className="hover:text-[#B33F18] transition">
+              <Link to="/bricks" className="hover:text-[#B33F18] transition">
                 Concrete Bricks
               </Link>
             </li>
@@ -89,18 +83,18 @@ const Footer = () => {
           <h4 className="font-semibold text-xl mb-4">Quick Links</h4>
           <ul className="space-y-2 text-gray-300 text-lg">
             <li>
-              <Link to="/about" className="hover:text-[#B33F18] transition">
-                About Us
+              <Link to="/privacy" className="hover:text-[#B33F18] transition">
+                Privacy Policy
               </Link>
             </li>
             <li>
-              <Link to="/products" className="hover:text-[#B33F18] transition">
-                Products
+              <Link to="/terms" className="hover:text-[#B33F18] transition">
+                Terms & Conditions
               </Link>
             </li>
             <li>
-              <Link to="/contact" className="hover:text-[#B33F18] transition">
-                Contact
+              <Link to="/refund" className="hover:text-[#B33F18] transition">
+                Refund Policy
               </Link>
             </li>
           </ul>

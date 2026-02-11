@@ -1,5 +1,5 @@
 import img1 from "../assets/news1.png";
-import img2 from "../assets/news2.png";
+import img2 from "../assets/product21.png";
 import img3 from "../assets/news3.png";
 
 const newsData = [

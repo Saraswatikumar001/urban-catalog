@@ -1,10 +1,11 @@
 import React from "react";
 import whoImg1 from "../../assets/who-we-are1.png";
 import whoImg2 from "../../assets/who-we-are2.png";
+import { Link } from "react-router-dom";
 
 const WhoWeAreSection = () => {
   return (
-    <section className="md:py-20 bg-white">
+    <section className="md:pt-20 md:pb-34 bg-white">
       <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
         {/* LEFT IMAGES */}
         <div className="relative">
@@ -62,11 +63,12 @@ const WhoWeAreSection = () => {
               </div>
             </div>
           </div>
-
           {/* BUTTON */}
-          <button className="bg-[#B13F1A] hover:bg-orange-600 text-white px-6 py-3 rounded-md font-semibold transition">
-            More About Us
-          </button>
+          <Link to="/paver">
+            <button className="bg-[#B13F1A] hover:bg-[#B33F18] text-white px-6 py-3 rounded-md font-semibold transition">
+              More About Us
+            </button>
+          </Link>
         </div>
       </div>
     </section>

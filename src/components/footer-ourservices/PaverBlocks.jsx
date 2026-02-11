@@ -1,54 +1,65 @@
 import React from "react";
 
+import productImg1 from "../../assets/product1.png";
+import productImg2 from "../../assets/product2.png";
+import productImg7 from "../../assets/product21.png";
+import productImg9 from "../../assets/product9.png";
+import productImg10 from "../../assets/product18.png";
+import productImg16 from "../../assets/product16.png";
+
+const products = [
+  { id: 1, name: "Diamond Paver Block", price: "₹29 / pcs", image: productImg1 },
+  { id: 2, name: "Polis Diamond Paver", price: "₹30 / pcs", image: productImg2 },
+  { id: 7, name: "Zig Zag Paver", price: "₹28 / pcs", image: productImg7 },
+  { id: 9, name: "3D Paver Block", price: "₹23 / pcs", image: productImg9 },
+  { id: 10, name: "4/8 Paver Block", price: "₹12 / pcs", image: productImg10 },
+  { id: 16, name: "Chekar Katali", price: "₹35 / pcs", image: productImg16 },
+];
+
 const PaverBlocks = () => {
   return (
-    <section className="pt-24 pb-16 bg-gray-100">
-      <div className="max-w-7xl mx-auto px-6">
-
-        {/* Page Heading */}
-        <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold">Paver Blocks</h1>
-          <p className="text-gray-600 mt-3">
-            High-quality concrete paver blocks for durable and elegant flooring.
+    <section className="bg-[#F5BA78]/15 py-20 px-6 md:px-20">
+      <div className="max-w-7xl mx-auto">
+        {/* Section Heading */}
+        <div className="text-center mb-16">
+          <h2 className="text-3xl font-bold text-[#B33F18]">
+            Standard Paver Blocks
+          </h2>
+          <p className="mt-4 text-gray-600 max-w-2xl mx-auto">
+            Affordable and durable paver blocks suitable for homes, pathways, parking areas, and outdoor spaces. Designed for dependable strength and everyday use, our paver blocks provide excellent load-bearing capacity and resistance to weather conditions. Their interlocking structure ensures stability and easy installation. Available in various sizes, patterns, and colors, they enhance both functionality and visual appeal for residential and commercial projects.
           </p>
         </div>
 
-        {/* Paver Blocks Design */}
-        <div className="grid md:grid-cols-3 gap-8">
+        {/* Cards Grid */}
+        <div className="grid md:grid-cols-3 gap-10">
+          {products.map((product) => (
+            <div
+              key={product.id}
+              className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition duration-300"
+            >
+              <img
+                src={product.image}
+                alt={product.name}
+                className="h-60 w-full object-cover"
+              />
 
-          {/* Card 1 */}
-          <div className="bg-white rounded-xl shadow hover:shadow-lg transition">
-            <div className="h-48 bg-gray-300 rounded-t-xl"></div>
-            <div className="p-6">
-              <h3 className="text-xl font-semibold">Zigzag Paver Blocks</h3>
-              <p className="text-gray-600 text-sm mt-2">
-                Ideal for driveways and heavy-load areas.
-              </p>
-            </div>
-          </div>
+              <div className="p-6">
+                <h3 className="text-xl font-semibold text-[#B33F18] mb-2">
+                  {product.name}
+                </h3>
 
-          {/* Card 2 */}
-          <div className="bg-white rounded-xl shadow hover:shadow-lg transition">
-            <div className="h-48 bg-gray-300 rounded-t-xl"></div>
-            <div className="p-6">
-              <h3 className="text-xl font-semibold">I-Shape Paver Blocks</h3>
-              <p className="text-gray-600 text-sm mt-2">
-                Interlocking design with strong grip.
-              </p>
-            </div>
-          </div>
+                <p className="text-gray-600 text-sm mb-3">
+                  Reliable concrete block for everyday outdoor use.
+                </p>
 
-          {/* Card 3 */}
-          <div className="bg-white rounded-xl shadow hover:shadow-lg transition">
-            <div className="h-48 bg-gray-300 rounded-t-xl"></div>
-            <div className="p-6">
-              <h3 className="text-xl font-semibold">Rectangular Paver Blocks</h3>
-              <p className="text-gray-600 text-sm mt-2">
-                Clean, modern look for walkways.
-              </p>
+                <p className="text-[#B33F18] font-bold">
+                  {product.price}
+                </p>
+              </div>
             </div>
-          </div>
+          ))}
         </div>
+
       </div>
     </section>
   );
