@@ -1,27 +1,32 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import slide1 from "../../assets/tiles-1.png";
+import slide2 from "../../assets/tiles-2.png";
+import slide3 from "../../assets/tiles-3.png";
+
 
 
 const slides = [
   {
-    image: "../../src/assets/tiles-1.png",
+    image: slide1,
     title: "TILES & PAVER BLOCKS",
     subtitle:
       "We provide checker katali block, brick guti tiles, polish tiles, and tuff tiles suitable for daily construction use.",
   },
   {
-    image: "../../src/assets/tiles-2.png",
+    image: slide2,
     title: "PAVER BLOCK DESIGNS",
     subtitle:
       "Available designs include damru paver block, arch paver block, floral block, and diamond paver blocks.",
   },
   {
-    image: "../../src/assets/tiles-3.png",
+    image: slide3,
     title: "OUTDOOR & FLOORING PRODUCTS",
     subtitle:
       "Our products are suitable for flooring, pathways, parking areas, and outdoor construction applications.",
   },
 ];
+
 
 const AboutHero = () => {
   const [current, setCurrent] = useState(0);
@@ -36,7 +41,7 @@ const AboutHero = () => {
   }, []);
 
   return (
-    <section className="relative h-[90vh] overflow-hidden">
+    <section className="relative min-h-[70vh] md:h-[90vh] overflow-hidden">
       {/* Background Images */}
       {slides.map((slide, index) => (
         <div
