@@ -9,11 +9,12 @@ import ProductCard from "../ProductCard";
  imghvr-zoom-in         → hvr-grow
  imghvr-fold-left       → hvr-sweep-to-left
  imghvr-zoom-out-left   → hvr-shrink
- imghvr-flip-horiz      → hvr-flip-horizontal
+ imghvr-flip-horiz      → hvr-flip-horizontal 
  imghvr-flip-vert       → hvr-flip-vertical
 */
 
 const hoverEffects = [
+
   "hvr-sweep-to-right",
   "hvr-grow",
   "hvr-sweep-to-left",
@@ -24,10 +25,9 @@ const hoverEffects = [
 
 const PurposeGoals = () => {
   const navigate = useNavigate();
-
   return (
     <div className="py-24">
-      <h1 className="text-[#BA461C] text-5xl font-bold text-center mb-10 uppercase">
+      <h1 className="text-[#BA461C] max-w-7xl mx-auto text-4xl font-bold text-center mb-10 uppercase">
         Our Products
       </h1>
 

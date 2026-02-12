@@ -15,24 +15,8 @@ const ExperienceSection = () => {
     3: "Durable and economical tiles for practical interiors",
   };
 
-  const images = [
-    { id: 1, src: img1, style: "w-64 md:w-72 z-10" },
-    {
-      id: 2,
-      src: img2,
-      style:
-        "w-48 md:w-56 absolute -top-8 md:-top-10 -right-2 md:-right-6",
-    },
-    {
-      id: 3,
-      src: img3,
-      style:
-        "w-44 md:w-48 absolute -bottom-6 md:-bottom-8 left-0",
-    },
-  ];
-
   return (
-    <section ref={ref} className="py-24 bg-gray-50 overflow-hidden">
+    <section ref={ref} className="py-44 bg-gray-50 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
 
         {/* LEFT CONTENT */}
@@ -74,44 +58,73 @@ const ExperienceSection = () => {
 
         {/* RIGHT IMAGE COLLAGE */}
         <div
-          className={`relative flex justify-center ${
+          className={`relative h-[420px] ${
             isVisible ? "animate-fadeIn" : "opacity-0"
           }`}
         >
-          {/* IMAGES */}
-          {images.map((img) => (
-            <img
-              key={img.id}
-              src={img.src}
-              alt="Tile preview"
-              onClick={() => setActiveImg(img.id)}
-              className={`rounded-xl shadow-lg cursor-zoom-in transition-transform duration-300 hover:scale-105 ${img.style}`}
-            />
-          ))}
+
+          {/* CENTER IMAGE */}
+          <div className="absolute inset-0 flex justify-center items-center">
+            <div className="relative">
+              <img
+                src={img1}
+                alt="Center tile"
+                onClick={() => setActiveImg(activeImg === 1 ? null : 1)}
+                className={`w-64 md:w-72 rounded-xl shadow-lg cursor-pointer transition-all duration-500
+                  ${activeImg === 1 ? "scale-[1.6] z-40" : "hover:scale-105"}`}
+              />
+
+              {activeImg === 1 && (
+                <p className="absolute bottom-full mb-4 left-1/2 -translate-x-1/2
+                  w-72 text-sm text-white bg-black/70 px-4 py-2 rounded-lg text-center">
+                  {captions[1]}
+                </p>
+              )}
+            </div>
+          </div>
+
+          {/* TOP RIGHT IMAGE */}
+          <div className="absolute top-0 right-0">
+            <div className="relative">
+              <img
+                src={img2}
+                alt="Top right tile"
+                onClick={() => setActiveImg(activeImg === 2 ? null : 2)}
+                className={`w-48 md:w-56 rounded-xl shadow-lg cursor-pointer transition-all duration-500
+                  ${activeImg === 2 ? "scale-[1.6] z-40" : "hover:scale-105"}`}
+              />
+
+              {activeImg === 2 && (
+                <p className="absolute bottom-full mb-4 left-1/2 -translate-x-1/2
+                  w-64 text-sm text-white bg-black/70 px-4 py-2 rounded-lg text-center">
+                  {captions[2]}
+                </p>
+              )}
+            </div>
+          </div>
+
+          {/* BOTTOM LEFT IMAGE */}
+          <div className="absolute bottom-0 left-0">
+            <div className="relative">
+              <img
+                src={img3}
+                alt="Bottom left tile"
+                onClick={() => setActiveImg(activeImg === 3 ? null : 3)}
+                className={`w-44 md:w-48 rounded-xl shadow-lg cursor-pointer transition-all duration-500
+                  ${activeImg === 3 ? "scale-[1.6] z-40" : "hover:scale-105"}`}
+              />
+
+              {activeImg === 3 && (
+                <p className="absolute bottom-full mb-4 left-1/2 -translate-x-1/2
+                  w-64 text-sm text-white bg-black/70 px-4 py-2 rounded-lg text-center">
+                  {captions[3]}
+                </p>
+              )}
+            </div>
+          </div>
+
         </div>
       </div>
-
-      {/* FULL SCREEN MODAL */}
-      {activeImg && (
-        <div
-          onClick={() => setActiveImg(null)}
-          className="fixed inset-0 z-50 bg-black/70 flex flex-col items-center justify-center px-6"
-        >
-          <img
-            src={images.find((i) => i.id === activeImg).src}
-            alt="Zoomed tile"
-            className="max-w-[90%] max-h-[80vh] rounded-xl shadow-2xl animate-zoomIn"
-          />
-
-          <p className="mt-6 text-white text-center bg-black/50 px-4 py-2 rounded-lg">
-            {captions[activeImg]}
-          </p>
-
-          <span className="mt-2 text-gray-300 text-xs">
-            Tap anywhere to close
-          </span>
-        </div>
-      )}
     </section>
   );
 };

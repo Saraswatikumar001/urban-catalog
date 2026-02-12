@@ -25,22 +25,19 @@ const Products = () => {
         category === "All" || item.category === category;
       return matchName && matchCategory;
     })
-    .slice(0, 6); // ✅ only 6 products
+    .slice(0, 6); 
 
   return (
     <section className="px-6 py-16 bg-white">
       <div className="max-w-7xl mx-auto">
-
         {/* TITLE */}
         <h1 className="text-[#BA461C] md:text-5xl text-3xl font-bold text-center mb-6 uppercase">
           Our Products
         </h1>
-
         <p className="text-gray-600 text-center max-w-2xl mx-auto mb-10">
           We provide tiles, paver blocks, and concrete products suitable for
           residential, commercial, and outdoor construction use.
         </p>
-
         {/* SEARCH */}
         <div className="max-w-md mx-auto mb-8">
           <input
