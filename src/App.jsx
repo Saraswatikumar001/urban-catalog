@@ -18,13 +18,17 @@ import ConcreteBricksSection from "./components/footer-ourservices/ConcreteBrick
 import PrivacyPolicy from "./components/footer-ourservices/PrivacyPolicy.jsx";
 import TermsConditions from "./components/footer-ourservices/TermsConditions";
 import RefundPolicy from "./components/footer-ourservices/RefundPolicy";
+import ScrollToTop from "./components/ScrollToTop"; 
 import "./App.css";
 import "./index.css";
 
 function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
+
       <Navbar />
+
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
@@ -42,6 +46,7 @@ function App() {
         <Route path="/refund" element={<RefundPolicy />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
+
       <Footer />
       <WhatsAppButton />
     </BrowserRouter>

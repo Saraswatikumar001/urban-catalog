@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import productImg3 from "../../assets/product4.png";
 import productImg4 from "../../assets/product5.png";
@@ -8,6 +8,7 @@ import productImg11 from "../../assets/product11.png";
 import productImg19 from "../../assets/product19.png";
 
 const TilesSection = () => {
+    const [activeCard, setActiveCard] = useState(null);
 
     const products = [
         { id: 3, name: "Guti Polis Tiles", price: "₹42 / pcs", image: productImg3 },
@@ -18,21 +19,23 @@ const TilesSection = () => {
         { id: 19, name: "1/1 Chekar Tiles", price: "₹35 / pcs", image: productImg19 },
     ];
 
+    const handleCardClick = (id) => {
+        setActiveCard(id);
+        setTimeout(() => setActiveCard(null), 300);
+    };
+
     return (
         <section className="bg-[#F5BA78]/10 py-20 px-6 md:px-20">
             <div className="max-w-7xl mx-auto">
-
-                {/* Section Heading */}
+                {/* Heading */}
                 <div className="text-center mb-16">
                     <h2 className="text-4xl font-bold text-[#B33F18]">
                         Designer Tiles
                     </h2>
-                    <p className="mt-4 text-gray-600 max-w-2xl mx-auto font-normal">
+                    <p className="mt-4 text-gray-600 max-w-3xl text-lg font-medium mx-auto">
                         Affordable and durable tile solutions suitable for homes,
                         courtyards, pathways, and outdoor flooring. Designed for
-                        long-lasting performance, our concrete tiles provide strength,
-                        weather resistance, and easy maintenance. Available in multiple
-                        designs and finishes to match both modern and traditional spaces.
+                        long-lasting performance with modern and traditional styles.
                     </p>
                 </div>
 
@@ -41,14 +44,20 @@ const TilesSection = () => {
                     {products.map((product) => (
                         <div
                             key={product.id}
-                            className="relative group rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300"
+                            onClick={() => handleCardClick(product.id)}
+                            className={`
+                                relative cursor-pointer rounded-2xl overflow-hidden
+                                shadow-lg transition-all duration-300
+                                hover:-translate-y-2 hover:shadow-2xl
+                                ${activeCard === product.id ? "scale-105 shadow-[0_20px_40px_rgba(179,63,24,0.35)]" : ""}
+                            `}
                         >
                             {/* Image */}
                             <div className="overflow-hidden">
                                 <img
                                     src={product.image}
                                     alt={product.name}
-                                    className="h-72 w-full object-cover transition duration-500 group-hover:scale-110"
+                                    className="h-72 w-full object-cover transition-transform duration-500 hover:scale-110"
                                 />
                             </div>
 
@@ -57,16 +66,11 @@ const TilesSection = () => {
                                 {product.price}
                             </span>
 
-                            {/* Overlay */}
-                            <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition duration-500 flex items-center justify-center">
-                                <div className="text-center text-white px-6">
-                                    <h3 className="text-xl font-semibold mb-4">
-                                        {product.name}
-                                    </h3>
-                                    <button className="bg-[#F5BA78] text-black px-5 py-2 rounded-lg font-medium hover:bg-[#e4a85f] transition">
-                                        Enquire Now
-                                    </button>
-                                </div>
+                            {/* Name Overlay */}
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 hover:opacity-100 transition duration-500 flex items-end">
+                                <h3 className="text-white text-lg font-semibold p-6">
+                                    {product.name}
+                                </h3>
                             </div>
                         </div>
                     ))}

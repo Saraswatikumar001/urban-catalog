@@ -26,7 +26,7 @@ const ConcreteBricksSection = () => {
                     <h2 className="text-4xl font-bold text-[#B33F18]">
                         Concrete Bricks Collection
                     </h2>
-                    <p className="mt-4 text-gray-600 max-w-3xl mx-auto">
+                    <p className="mt-4 text-gray-600 max-w-3xl mx-auto text-lg font-medium">
                         Strong and affordable concrete bricks suitable for boundary walls, pathways, landscaping, and construction use. Designed for durability and long-term performance. Manufactured using quality materials, these bricks provide reliable strength and easy installation. Ideal for both residential and small commercial projects, offering practical solutions at cost-effective prices.
 
                     </p>
@@ -46,11 +46,11 @@ const ConcreteBricksSection = () => {
                             />
 
                             <div className="p-6">
-                                <h3 className="text-xl font-semibold text-[#B33F18] mb-2">
+                                <h3 className="text-2xl font-semibold text-[#B33F18] mb-2">
                                     {product.name}
                                 </h3>
 
-                                <p className="text-gray-600 text-sm mb-3">
+                                <p className="text-gray-600 text-lg mb-3">
                                     Reliable concrete brick for regular construction and
                                     outdoor applications.
                                 </p>

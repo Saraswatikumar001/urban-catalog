@@ -10,13 +10,13 @@ const LatestNews = () => {
         {/* HEADER */}
         <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-14">
           <div>
-            <p className="text-[#BA461C] font-semibold uppercase tracking-wide">
+            <p className="text-[#BA461C] font-semibold uppercase tracking-wide text-lg md:text-xl font-bold">
               Our Blog
             </p>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-2">
+            <h2 className="text-4xl md:text-4xl font-bold text-gray-800 mt-2">
               Latest News & Insights
             </h2>
-            <p className="text-gray-600 mt-3 max-w-xl">
+            <p className="text-gray-600 mt-3 max-w-xl text-lg font-medium">
               Stay updated with the latest trends, tips, and innovations in
               tiles, paver blocks, and construction solutions.
             </p>
@@ -68,22 +68,22 @@ const LatestNews = () => {
               <div className="p-6">
                 {/* META */}
                 <div className="flex items-center gap-6 text-sm text-gray-500 mb-3">
-                  <span className="flex items-center gap-2">
+                  <span className="flex items-center gap-2 text-lg font-bold">
                     <FaUser /> {item.author}
                   </span>
-                  <span className="flex items-center gap-2">
+                  <span className="flex items-center gap-2 text-lg font-bold">
                     <FaCommentAlt /> {item.comments}
                   </span>
                 </div>
 
                 {/* TITLE */}
-                <h3 className="text-xl font-semibold text-gray-900 mb-3
+                <h3 className="text-2xl font-bold text-gray-900 mb-3
                                group-hover:text-[#BA461C] transition">
                   {item.title}
                 </h3>
 
                 {/* DESC */}
-                <p className="text-gray-600 mb-5 leading-relaxed">
+                <p className="text-gray-600 mb-5 leading-relaxed text-lg font-medium">
                   {item.desc}
                 </p>
 
@@ -92,7 +92,7 @@ const LatestNews = () => {
                   to={`/news/${item.slug}`}
                   className="inline-flex items-center gap-2
                              text-[#BA461C] font-semibold
-                             group-hover:gap-3 transition-all"
+                             group-hover:gap-3 transition-all text-xl"
                 >
                   Read More
                   <FaArrowRight />

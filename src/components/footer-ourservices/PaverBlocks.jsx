@@ -22,10 +22,10 @@ const PaverBlocks = () => {
       <div className="max-w-7xl mx-auto">
         {/* Section Heading */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold text-[#B33F18]">
+          <h2 className="text-4xl font-bold text-[#B33F18]">
             Standard Paver Blocks
           </h2>
-          <p className="mt-4 text-gray-600 max-w-2xl mx-auto">
+          <p className="mt-4 text-gray-600 max-w-3xl mx-auto text-lg font-medium">
             Affordable and durable paver blocks suitable for homes, pathways, parking areas, and outdoor spaces. Designed for dependable strength and everyday use, our paver blocks provide excellent load-bearing capacity and resistance to weather conditions. Their interlocking structure ensures stability and easy installation. Available in various sizes, patterns, and colors, they enhance both functionality and visual appeal for residential and commercial projects.
           </p>
         </div>
@@ -42,13 +42,12 @@ const PaverBlocks = () => {
                 alt={product.name}
                 className="h-60 w-full object-cover"
               />
-
               <div className="p-6">
-                <h3 className="text-xl font-semibold text-[#B33F18] mb-2">
+                <h3 className="text-2xl font-semibold text-[#B33F18] mb-2">
                   {product.name}
                 </h3>
 
-                <p className="text-gray-600 text-sm mb-3">
+                <p className="text-gray-600 text-lg mb-3">
                   Reliable concrete block for everyday outdoor use.
                 </p>
 
@@ -59,7 +58,6 @@ const PaverBlocks = () => {
             </div>
           ))}
         </div>
-
       </div>
     </section>
   );

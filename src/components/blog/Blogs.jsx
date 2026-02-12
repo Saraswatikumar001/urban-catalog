@@ -1,28 +1,28 @@
 import React from "react";
 import BlogCard from "../../components/blog/BlogCard";
 import blogs from "../../data/blogs";
+import { Link } from "react-router-dom";
+import product12 from "../../assets/product13.png";
 
 const Blogs = () => {
   return (
     <section className="bg-gray-100">
-
       {/* HERO SECTION */}
       <div
         className="relative h-[300px] flex items-center justify-center text-center"
         style={{
-          backgroundImage: "url('/images/blog-tiles-hero.jpg')",
+          backgroundImage: `url(${product12})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
       >
         {/* Overlay */}
         <div className="absolute inset-0 bg-black/60"></div>
-
         <div className="relative z-10 px-6">
           <h1 className="text-white text-4xl md:text-5xl font-bold uppercase tracking-wide">
             Our Blogs
           </h1>
-          <p className="text-gray-200 mt-4 max-w-2xl mx-auto">
+          <p className="text-gray-200 mt-4 max-w-3xl text-lg font-medium mx-auto">
             Insights, trends, and expert knowledge on tiles, flooring,
             construction, and modern design solutions.
           </p>

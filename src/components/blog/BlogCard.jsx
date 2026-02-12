@@ -4,13 +4,13 @@ import { Link } from "react-router-dom";
 const BlogCard = ({ blog }) => {
   return (
     <div className="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300">
-      
+
       {/* IMAGE SECTION */}
       <div className="relative h-52 overflow-hidden">
         <img
           src={blog.image}
           alt={blog.title}
-          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+          className="w-full h-full  object-cover transition-transform duration-500 group-hover:scale-110"
         />
 
         {/* Gradient overlay */}
@@ -26,21 +26,21 @@ const BlogCard = ({ blog }) => {
 
       {/* CONTENT */}
       <div className="p-6">
-        <p className="text-sm text-gray-500 mb-2">
+        <p className="text-sm text-gray-700 font-semibold mb-2">
           {blog.date}
         </p>
 
-        <h3 className="text-xl font-bold text-gray-800 mb-3 leading-snug group-hover:text-[#BA461C] transition">
+        <h3 className="text-2xl font-bold text-gray-800 mb-3 leading-snug group-hover:text-[#BA461C] transition">
           {blog.title}
         </h3>
 
-        <p className="text-gray-600 text-base mb-6 leading-relaxed">
+        <p className="text-gray-600 text-lg mb-6 font-medium leading-relaxed">
           {blog.excerpt}
         </p>
 
         <Link
           to={`/blog/${blog.slug}`}
-          className="inline-flex items-center gap-2 text-[#BA461C] font-semibold group-hover:gap-3 transition-all"
+          className="inline-flex items-center text-lg gap-2 text-[#BA461C] font-semibold group-hover:gap-3 transition-all"
         >
           Read More
           <span className="text-lg">→</span>

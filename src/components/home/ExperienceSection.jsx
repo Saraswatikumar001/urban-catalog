@@ -15,11 +15,24 @@ const ExperienceSection = () => {
     3: "Durable and economical tiles for practical interiors",
   };
 
+  const images = [
+    { id: 1, src: img1, style: "w-64 md:w-72 z-10" },
+    {
+      id: 2,
+      src: img2,
+      style:
+        "w-48 md:w-56 absolute -top-8 md:-top-10 -right-2 md:-right-6",
+    },
+    {
+      id: 3,
+      src: img3,
+      style:
+        "w-44 md:w-48 absolute -bottom-6 md:-bottom-8 left-0",
+    },
+  ];
+
   return (
-    <section
-      ref={ref}
-      className="py-20 bg-gray-50 overflow-hidden"
-    >
+    <section ref={ref} className="py-24 bg-gray-50 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
 
         {/* LEFT CONTENT */}
@@ -57,90 +70,48 @@ const ExperienceSection = () => {
               Explore Tile Collection
             </button>
           </Link>
-
         </div>
 
         {/* RIGHT IMAGE COLLAGE */}
         <div
-          className={`relative flex justify-center ${isVisible ? "animate-fadeIn" : "opacity-0"
-            }`}
+          className={`relative flex justify-center ${
+            isVisible ? "animate-fadeIn" : "opacity-0"
+          }`}
         >
-
-          {/* OVERLAY */}
-          {activeImg && (
-            <div
-              onClick={() => setActiveImg(null)}
-              className="fixed inset-0 bg-black/80 z-40 cursor-pointer"
-            ></div>
-          )}
-
-          {/* IMAGE 1 */}
-          <img
-            src={img1}
-            alt="Tiles interior"
-            onClick={() => setActiveImg(activeImg === 1 ? null : 1)}
-            className={`rounded-xl shadow-lg cursor-zoom-in transition
-            w-64 md:w-72 z-10
-            ${activeImg === 1
-                ? "fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 zoom-center z-50"
-                : ""
-              }`}
-          />
-
-          {/* IMAGE 2 */}
-          <img
-            src={img2}
-            alt="Tiles flooring"
-            onClick={() => setActiveImg(activeImg === 2 ? null : 2)}
-            className={`rounded-xl shadow-lg cursor-zoom-in transition
-            w-48 md:w-56 absolute -top-8 md:-top-10 -right-2 md:-right-6
-            ${activeImg === 2
-                ? "fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 zoom-rotate z-50"
-                : ""
-              }`}
-          />
-
-          {/* IMAGE 3 */}
-          <img
-            src={img3}
-            alt="Modern tiles"
-            onClick={() => setActiveImg(activeImg === 3 ? null : 3)}
-            className={`rounded-xl shadow-lg cursor-zoom-in transition
-            w-44 md:w-48 absolute -bottom-6 md:-bottom-8 left-0
-            ${activeImg === 3
-                ? "fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 zoom-lift z-50"
-                : ""
-              }`}
-          />
-
-          {/* CAPTION */}
-          {activeImg && (
-            <div className="fixed bottom-10 left-1/2 -translate-x-1/2 z-50 text-center px-6">
-              <p className="text-white text-sm md:text-base bg-black/60 rounded-lg px-4 py-2">
-                {captions[activeImg]}
-              </p>
-              <p className="text-gray-300 text-xs mt-2">
-                Tap anywhere to close
-              </p>
-            </div>
-          )}
-
-          {/* RECTANGLE EXPERIENCE BADGE */}
-          <div
-            className={`absolute -bottom-10 right-0 hidden md:block
-            bg-white border-l-4 border-[#B1441D]
-            shadow-2xl rounded-xl px-8 py-6
-            ${isVisible ? "animate-slideUp" : "opacity-0"}`}
-          >
-            <h3 className="text-3xl font-bold text-[#B1441D]">
-              15+
-            </h3>
-            <p className="text-gray-700 font-medium text-sm mt-1">
-              Years of Trusted <br /> Service
-            </p>
-          </div>
+          {/* IMAGES */}
+          {images.map((img) => (
+            <img
+              key={img.id}
+              src={img.src}
+              alt="Tile preview"
+              onClick={() => setActiveImg(img.id)}
+              className={`rounded-xl shadow-lg cursor-zoom-in transition-transform duration-300 hover:scale-105 ${img.style}`}
+            />
+          ))}
         </div>
       </div>
+
+      {/* FULL SCREEN MODAL */}
+      {activeImg && (
+        <div
+          onClick={() => setActiveImg(null)}
+          className="fixed inset-0 z-50 bg-black/70 flex flex-col items-center justify-center px-6"
+        >
+          <img
+            src={images.find((i) => i.id === activeImg).src}
+            alt="Zoomed tile"
+            className="max-w-[90%] max-h-[80vh] rounded-xl shadow-2xl animate-zoomIn"
+          />
+
+          <p className="mt-6 text-white text-center bg-black/50 px-4 py-2 rounded-lg">
+            {captions[activeImg]}
+          </p>
+
+          <span className="mt-2 text-gray-300 text-xs">
+            Tap anywhere to close
+          </span>
+        </div>
+      )}
     </section>
   );
 };

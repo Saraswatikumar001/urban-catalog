@@ -13,6 +13,8 @@
     "@emailjs/browser": "^4.4.1",
     "@tailwindcss/postcss": "^4.1.18",
     "@tailwindcss/vite": "^4.1.18",
+    "hover.css": "^2.3.2",
+    "imagehover.css": "^2.0.0",
     "postcss": "^8.5.6",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",

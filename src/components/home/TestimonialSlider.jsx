@@ -34,11 +34,10 @@ const TestimonialSlider = () => {
   return (
     <section className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-6">
-
         {/* HEADER */}
         <div className="flex justify-between items-center mb-10">
           <div>
-            <p className="text-orange-500 font-semibold uppercase">
+            <p className="text-orange-500 font-semibold uppercase text-5xl font-bold mb-2">
               Testimonials
             </p>
             <h2 className="text-3xl font-bold">
@@ -51,15 +50,13 @@ const TestimonialSlider = () => {
         <Swiper
           modules={[Navigation, Autoplay]}
           navigation
-          autoplay={{ delay: 3500 }}
+          autoplay={{ delay: 3000 }}
           loop
           slidesPerView={1}
         >
           {testimonials.map((item, index) => (
             <SwiperSlide key={index}>
-
               <div className="grid md:grid-cols-5 gap-6 items-center">
-
                 {/* LEFT IMAGE CARD */}
                 <div className="md:col-span-2">
                   <img
@@ -68,39 +65,31 @@ const TestimonialSlider = () => {
                     className="rounded-xl w-full h-64 object-cover"
                   />
                 </div>
-
                 {/* RIGHT CONTENT CARD */}
                 <div className="md:col-span-3 bg-white shadow-lg rounded-xl p-8 relative">
-
                   {/* QUOTE ICON */}
                   <div className="absolute top-6 right-6 text-gray-200 text-6xl">
                     ❝
                   </div>
-
                   <div className="flex items-center gap-3 mb-4">
                     <img
                       src={item.image}
                       className="w-12 h-12 rounded-full object-cover"
                     />
                     <div>
-                      <h4 className="font-semibold">{item.name}</h4>
-                      <p className="text-sm text-gray-500">{item.role}</p>
+                      <h4 className="font-semibold text-4xl font-bold">{item.name}</h4>
+                      <p className="text-xl text-gray-500">{item.role}</p>
                     </div>
                   </div>
-
-                  <p className="text-gray-600 leading-relaxed">
+                  <p className="text-gray-600 text-xl font-medium leading-relaxed">
                     {item.text}
                   </p>
-
                   {/* STARS */}
-                  <div className="text-orange-500 mt-4">
+                  <div className="text-orange-500 text-lg mt-4">
                     ★★★★★
                   </div>
-
                 </div>
-
               </div>
-
             </SwiperSlide>
           ))}
         </Swiper>
