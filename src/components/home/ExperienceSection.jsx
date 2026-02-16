@@ -16,7 +16,7 @@ const ExperienceSection = () => {
   };
 
   return (
-    <section ref={ref} className="py-44 bg-gray-50 overflow-hidden">
+    <section ref={ref} className="md:py-44 py-24 bg-gray-50 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
 
         {/* LEFT CONTENT */}
@@ -122,7 +122,6 @@ const ExperienceSection = () => {
               )}
             </div>
           </div>
-
         </div>
       </div>
     </section>

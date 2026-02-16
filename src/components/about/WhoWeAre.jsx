@@ -6,30 +6,49 @@ import { Link } from "react-router-dom";
 const WhoWeAreSection = () => {
   return (
     <section className="md:pt-20 md:pb-34 bg-white">
-      <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+      <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">        
         {/* LEFT IMAGES */}
-        <div className="relative">
+        <div className="relative group">          
           {/* Big Image */}
-          <img
-            src={whoImg1}
-            alt="Engineer"
-            className="rounded-lg md:w-3/4 w-full"
-          />
+          <div className="overflow-hidden rounded-lg md:w-3/4 w-full shadow-lg">
+            <img
+              src={whoImg1}
+              alt="Engineer"
+              className="
+                w-full h-full object-cover
+                transition-transform duration-700 ease-out
+                group-hover:scale-110
+              "
+            />
+          </div>
+
           {/* Small Image */}
-          <img
-            src={whoImg2}
-            alt="Construction"
-            className="rounded-lg w-1/2 absolute md:bottom-[-40px] bottom-[-101px] md:right-0 shadow-lg"
-          />
+          <div className="overflow-hidden rounded-lg w-1/2 absolute md:bottom-[-40px] bottom-[-101px] md:right-0 shadow-xl">
+            <img
+              src={whoImg2}
+              alt="Construction"
+              className="
+                w-full h-full object-cover
+                transition-transform duration-700 ease-out
+                group-hover:scale-110
+              "
+            />
+          </div>
+
           {/* Experience Box */}
-          <div className="md:mt-0 mt-1 absolute md:top-6 md:right-6 right-0 bg-[#B13F1A] text-white p-6 rounded-lg text-center shadow-lg">
+          <div className="
+            md:mt-0 mt-1 absolute md:top-6 md:right-6 right-0
+            bg-[#B13F1A] text-white p-6 rounded-lg text-center shadow-lg
+            transition-transform duration-500
+            group-hover:-translate-y-2
+          ">
             <h2 className="text-3xl font-bold">25+</h2>
             <p className="text-sm">Years Experience</p>
           </div>
         </div>
 
         {/* RIGHT CONTENT */}
-        <div class="md:py-0 py-20">
+        <div className="md:py-0 py-20">
           <p className="text-[#D96E4F] font-semibold mb-2 uppercase">
             Who We Are
           </p>
@@ -63,6 +82,7 @@ const WhoWeAreSection = () => {
               </div>
             </div>
           </div>
+
           {/* BUTTON */}
           <Link to="/paver">
             <button className="bg-[#B13F1A] hover:bg-[#B33F18] text-white px-6 py-3 rounded-md font-semibold transition">

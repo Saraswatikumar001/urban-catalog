@@ -3,16 +3,6 @@ import { useNavigate } from "react-router-dom";
 import products from "../../data/products";
 import ProductCard from "../ProductCard";
 
-/*
- Equivalent hover effects:
- imghvr-fold-right      → hvr-sweep-to-right
- imghvr-zoom-in         → hvr-grow
- imghvr-fold-left       → hvr-sweep-to-left
- imghvr-zoom-out-left   → hvr-shrink
- imghvr-flip-horiz      → hvr-flip-horizontal 
- imghvr-flip-vert       → hvr-flip-vertical
-*/
-
 const hoverEffects = [
   "hvr-sweep-to-right",
   "hvr-grow",
@@ -27,13 +17,13 @@ const PurposeGoals = () => {
   const [activeCard, setActiveCard] = useState(null);
 
   return (
-    <div className="py-16 sm:py-24 w-full px-4 sm:px-6 lg:px-0">
+    <div className="py-16 sm:py-24 w-full px-4 sm:px-6 lg:px-0 overflow-x-hidden">
       <h1 className="text-[#BA461C] text-2xl sm:text-4xl font-bold text-center mb-8 sm:mb-10 uppercase">
         Our Products
       </h1>
 
       {/* PRODUCTS GRID */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-10">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-24 gap-y-16">
         {products.slice(0, 6).map((item, index) => (
           <ProductCard
             key={item.id}
@@ -45,9 +35,10 @@ const PurposeGoals = () => {
             }
           />
         ))}
-      </div>    
+      </div>
+
       {/* EXPLORE MORE */}
-      <div className="flex justify-center mt-10 sm:mt-14">
+      <div className="flex justify-center mt-12 sm:mt-16">
         <button
           onClick={() => navigate("/products")}
           className="px-6 sm:px-8 py-3 sm:py-4 rounded-full bg-[#BA461C] text-white font-semibold hover:bg-[#a53c18] transition"

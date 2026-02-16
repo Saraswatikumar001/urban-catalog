@@ -12,6 +12,7 @@ import Contact from "./components/contact/Contact";
 import WhatsAppButton from "./components/WhatsAppButton";
 import Blogs from "./components/blog/Blogs";
 import ServiceDetails from "../public/services/ServiceDetails";
+import ProductDetails from "./components/ProductDetails.jsx";
 import PaverBlocks from "./components/footer-ourservices/PaverBlocks";
 import TilesSection from "./components/footer-ourservices/TilesSection";
 import ConcreteBricksSection from "./components/footer-ourservices/ConcreteBricksSection";
@@ -38,6 +39,7 @@ function App() {
         <Route path="/news" element={<AllNews />} />
         <Route path="/blog" element={<Blogs />} />
         <Route path="/services/:slug" element={<ServiceDetails />} />
+        <Route path="/products/:id" element={<ProductDetails />} />
         <Route path="/paver" element={<PaverBlocks />} />
         <Route path="/tiles" element={<TilesSection />} />
         <Route path="/bricks" element={<ConcreteBricksSection />} />

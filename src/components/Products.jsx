@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import ProductCard from "../components/ProductCard";
 import products from "../data/products";
 import { useNavigate } from "react-router-dom";
+
 const hoverEffects = [
   "imghvr-fold-right",
   "imghvr-zoom-in",

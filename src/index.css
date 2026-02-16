@@ -177,3 +177,7 @@ body {
   transform: rotateX(10deg) scale(1.05);
   box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
 }
+
+body {
+  overflow-x: hidden;
+}
