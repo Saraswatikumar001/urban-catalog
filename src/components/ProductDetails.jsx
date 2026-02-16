@@ -58,7 +58,7 @@ const ProductDetails = () => {
                     This product is suitable for residential, commercial, and outdoor construction use. Designed for durability, strength, and long-term performance in regular usage conditions.
                     Manufactured using quality raw materials and controlled processes, it ensures uniform shape and dependable performance.
                 </p>
-                <p className="mt-4 text-lg text-gray-500 font-medium">
+                <p className="mt-4 text-lg text-gray-500 font-semibold">
                     Suitable for homes, walkways, driveways, and outdoor spaces requiring reliable concrete solutions. </p>
             </div>
         </section>
