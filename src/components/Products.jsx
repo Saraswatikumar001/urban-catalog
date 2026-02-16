@@ -50,7 +50,7 @@ const Products = () => {
         </div>
 
         {/* CATEGORY */}
-        <div className="flex justify-center gap-4 mb-12 flex-wrap">
+        <div className="flex justify-center gap-4 mb-12 md:flex-wrap">
           {["All", "Tiles", "Blocks", "Pavers"].map((cat) => (
             <button
               key={cat}

@@ -37,7 +37,7 @@ const TestimonialSlider = () => {
         {/* HEADER */}
         <div className="flex justify-between items-center mb-10">
           <div>
-            <p className="text-orange-500 font-semibold uppercase text-5xl font-bold mb-2">
+            <p className="text-orange-500 font-semibold uppercase text-3xl md:text-4xl font-bold mb-2">
               Testimonials
             </p>
             <h2 className="text-3xl font-bold">
@@ -77,11 +77,11 @@ const TestimonialSlider = () => {
                       className="w-12 h-12 rounded-full object-cover"
                     />
                     <div>
-                      <h4 className="font-semibold text-4xl font-bold">{item.name}</h4>
+                      <h4 className="font-semibold text-3xl md:text-4xl font-bold">{item.name}</h4>
                       <p className="text-xl text-gray-500">{item.role}</p>
                     </div>
                   </div>
-                  <p className="text-gray-600 text-xl font-medium leading-relaxed">
+                  <p className="text-gray-600 text-lg md:text-xl font-medium leading-relaxed">
                     {item.text}
                   </p>
                   {/* STARS */}
